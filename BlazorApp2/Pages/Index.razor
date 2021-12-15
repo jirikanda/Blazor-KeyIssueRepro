@@ -1,0 +1,18 @@
+﻿@page "/"
+
+<button @onclick="() => count += 1">+1</button>
+<button @onclick="() => count -= 1">-1 (click here)</button>
+
+<div>
+    
+    @for (int i = 0; i < count; i++)
+    {
+        <SomeComponent @key="i" /> @* I understand setting the key to the "i" which is useless. I just need use a key. *@
+    }
+
+    <AnotherComponent />
+</div>
+
+@code{
+    private int count = 5;
+}
